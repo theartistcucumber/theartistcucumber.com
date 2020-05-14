@@ -397,12 +397,17 @@ nav ul#social-media > li {
   color: #c76675;
 }
 
-@media (max-width: 450px) {
-  nav input:checked ~ ul {
-    margin: 75% auto;
+@media (max-width: 1024px) {
+ nav input:checked ~ ul {
+    margin: 50% auto;
   }
   .presentation {
     padding: calc(50vh - 40%) 25px 25px 25px;
+  }
+  @media (max-width: 400px) {
+    nav input:checked ~ ul {
+      margin: 60% auto;
+    }
   }
 }
 
