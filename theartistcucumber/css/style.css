@@ -1,0 +1,418 @@
+body {
+  line-height: 1.25em;
+  letter-spacing: 0em;
+  font-family: "Futura Medium";
+  font-style: normal;
+  opacity: 1;
+  animation: entrance 2.5s;
+}
+
+body {
+  background-color: #fffefa;
+  color: #858585;
+}
+
+body.open {
+  overflow: hidden;
+}
+
+img {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.presentation {
+  margin: 15px;
+  width: calc(100vw - 30px);
+  height: calc(100vh - 30px);
+  overflow: hidden;
+  background-image: url("../images/Chen.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70% 25px 25px 25px;
+}
+
+/* Modificación para Desktop, a partir de 400px*/
+@media (min-width: 400px) {
+  .presentation {
+    padding: calc(50vh - 10%) 25px 25px 25px;
+  }
+  .overlay h2 {
+    font-size: 16px;
+  }
+  .arc-cucumber {
+    font-family: "Bebas";
+    font-size: 18pt;
+    margin: 5px auto;
+  }
+}
+
+.presentation > div {
+  display: flex;
+  padding: 30px;
+}
+
+.presentation > div a {
+  margin: 0 5px;
+  width: 28px;
+}
+
+.presentation > figure {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.presentation > a {
+  color: rgb(255, 255, 255);
+  padding: 20px;
+}
+.logo {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.logo:hover {
+  transform: scale(1.2);
+}
+
+/*portfolio*/
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  grid-gap: 1rem;
+  padding: 30px;
+}
+
+.contenedor .imagen {
+  width: 100%;
+  position: relative;
+  padding: 100px 0;
+  background-size: cover;
+  background-position: top;
+}
+
+.contenedor-imagen {
+  padding: 0 30px;
+}
+
+.contenedor-imagen .imagen {
+  width: 100%;
+  position: relative;
+  padding-bottom: 30px;
+  background-size: cover;
+  background-position: top;
+}
+
+.imagen img {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: rgb(199, 102, 117, 60%);
+  overflow: hidden;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay h2 {
+  font-family: "Futura Medium";
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.imagen:hover .overlay {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.arc-cucumber {
+  color: #c76675;
+  font-family: "Bebas";
+  font-size: 20pt;
+  margin: 5px auto;
+  display: block;
+  white-space: nowrap;
+}
+
+header {
+  margin: 1rem 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*enlaces final de página*/
+
+.contenedor-texto {
+  text-align: center;
+  display: block;
+  padding: 8vw 8vw;
+  font-family: "Futura Medium";
+  width: 100%;
+}
+
+.contenedor-texto > a:hover {
+  color: #c76675;
+}
+
+a {
+  color: #858585;
+}
+
+/*burguer menu*/
+
+/************************************************/
+/****************** NAVIGATION ******************/
+/************************************************/
+nav {
+  background: white;
+  color: #1d1f20;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/*** INPUT ***/
+nav input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/*** LABEL ***/
+nav label {
+  cursor: pointer;
+  display: block;
+  font: 2em/1 "Oswald", sans-serif;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+  background: #858585;
+  border-radius: 5px;
+  height: 2px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+#menu-icon {
+  display: inline-block;
+  margin: 0.2em 0;
+  max-width: 1em;
+  position: relative;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+  content: "";
+  left: 0;
+  position: absolute;
+}
+
+#menu-icon:before {
+  top: -0.25em;
+}
+
+#menu-icon:after {
+  bottom: -0.25em;
+}
+
+/* Close Icon */
+nav input[type="checkbox"]:checked + label #menu-icon {
+  background: transparent;
+}
+
+nav input[type="checkbox"]:checked + label #menu-icon:before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+nav input[type="checkbox"]:checked + label #menu-icon:after {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked ~ #overlay {
+  background: white;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* List */
+nav ul {
+  font-size: 1.5em;
+  list-style: none;
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+nav input:checked ~ ul {
+  width: calc(100vw - 30px);
+  height: calc(100vh - 30px);
+  margin: 20% auto;
+  justify-content: space-around;
+  max-height: inherit;
+  opacity: 1;
+}
+
+nav ul > li {
+  margin: 2em 0;
+}
+
+nav ul a {
+  color: #1d1f20;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+nav ul a:hover {
+  color: #c76675;
+}
+
+/* Social Media */
+nav ul#social-media > li {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+
+/*about*/
+.about-me-columns {
+  max-width: 1280px;
+  margin: 5vw auto;
+  margin-bottom: 44px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr) 750px);
+  grid-gap: 1rem;
+
+  padding: 30px;
+}
+
+.info {
+  display: grid;
+}
+/*redes*/
+.redes {
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 120px;
+}
+
+.redes > a {
+  margin: 0 5px;
+  width: 28px;
+}
+
+.btn {
+  background-color: white;
+  border: none;
+  width: 40px;
+  padding: 0 5px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.4;
+}
+
+.btn-h {
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  padding: 0 5px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.btn-h:hover {
+  opacity: 0.4;
+}
+
+#myBtn {
+  display: flex;
+  margin: 0 auto;
+  font-family: "Futura italic";
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #858585;
+  cursor: pointer;
+  padding-bottom: 60px;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+#myBtn:hover {
+  color: #c76675;
+}
+
+@media (max-width: 400px) {
+  nav input:checked ~ ul {
+    margin: 70% auto;
+  }
+  .presentation {
+    padding: calc(50vh - 40%) 25px 25px 25px;
+  }
+}
+
+@keyframes entrance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;;
+  }
+}
