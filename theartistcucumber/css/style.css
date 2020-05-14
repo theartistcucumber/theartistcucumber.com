@@ -399,17 +399,19 @@ nav ul#social-media > li {
 
 @media (max-width: 1024px) {
  nav input:checked ~ ul {
-    margin: 25% auto;
+    margin: 40% auto;
   }
   .presentation {
     padding: calc(50vh - 40%) 25px 25px 25px;
   }
+}
+
   @media (max-width: 400px) {
     nav input:checked ~ ul {
-      margin: 10% auto;
+      margin: 60% auto;
+      display: block;
     }
   }
-}
 
 @keyframes entrance {
   0% {
