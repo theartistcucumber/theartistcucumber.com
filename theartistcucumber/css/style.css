@@ -397,7 +397,7 @@ nav ul#social-media > li {
   color: #c76675;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
   nav input:checked ~ ul {
     margin: 75% auto;
   }
